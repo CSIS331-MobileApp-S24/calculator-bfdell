@@ -3,7 +3,7 @@ import './ButtonBox.css'
 import Button from './Button.js';
 const ButtonBox = () => {
 
-    let btnValues = [];
+    const btnValues = [];
     btnValues.push(["C", "+-", "%", "/"]);
     btnValues.push(["7", "8", "9", "X"]);
     btnValues.push(["4", "5", "6", "-"]);
