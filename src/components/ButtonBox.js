@@ -1,7 +1,7 @@
 import React from 'react';
 import './ButtonBox.css'
 import Button from './Button.js';
-const ButtonBox = () => {
+const ButtonBox = ({ handleClick }) => {
 
     const btnValues = [];
     btnValues.push(["C", "+-", "%", "/"]);
@@ -16,7 +16,7 @@ const ButtonBox = () => {
             {btnValues.flat().map((element, index) => {
                 let btnClr = "dark-blue";
                 let style = "";
-                if (index == btnValues.flat().length - 1) {
+                if (index === btnValues.flat().length - 1) {
                     btnClr = "red"
                     style = "equalsButton"
                 }
@@ -24,9 +24,8 @@ const ButtonBox = () => {
                     key={index}
                     className={`white ba br3 bg-${btnClr} b--${btnClr} ${style}`}
                     value={element}
-                    onClick={() => { console.log(`${element} Button Clicked`) }}
+                    onClick={() => { handleClick(element) }}
                 />
-
             })}
 
         </div>
